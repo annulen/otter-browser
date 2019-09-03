@@ -488,7 +488,9 @@ if (WIN32)
 		src/modules/platforms/windows/WindowsPlatformStyle.cpp
 	)
 elseif (APPLE)
-	find_package(Qt5MacExtras 5.6.0 QUIET)
+    message("CMAKE_MODULE_PATH=${CMAKE_MODULE_PATH}")
+    message("CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}")
+    find_package(Qt5MacExtras 5.6.0 REQUIRED)
 
 	set(CMAKE_OSX_DEPLOYMENT_TARGET 10.10)
 	set(MACOSX_BUNDLE_BUNDLE_NAME "Otter Browser")
